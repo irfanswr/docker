@@ -1,0 +1,21 @@
+//create a Dockerfile to define your image and a compose.yaml file to define how to run it.
+
+docker run -dp 80:80 docker/getting-started (desktop)
+docker run -dp 80:80 docker/getting-started:pwd	(web)
+	-d - run the container in detached mode (in the background)
+	-p 80:80 - map port 80 of the host to port 80 in the container
+	dockersamples/101-tutorial - the image to use
+
+docker build -t getting-started . 	//build image
+
+docker init		//create a Dockerfile and a compose.yaml
+
+docker compose up -d 	//run compose file
+
+docker ps -a		//list of all containers
+
+docker stop $container_id	//stop container
+
+docker rm $container_id		//remove container
+
+docker tag docker/welcome-to-docker YOUR-USERNAME/welcome-to-docker	//rename docker image for publish to hub
