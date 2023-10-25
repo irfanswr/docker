@@ -8,11 +8,15 @@ docker run -dp 80:80 docker/getting-started:pwd	(web)
 
 docker build -t getting-started . 	//build image
 
-docker init		//create a Dockerfile and a compose.yaml
+docker init			//create a Dockerfile and a compose.yaml
 
-docker compose up -d 	//run compose file
+docker compose up -d 		//run compose file
+docker compose up --build	//run build compose file
 
-docker ps -a		//list of all containers
+docker compose down		//stop the application
+docker compose rm		//stop remove container
+
+docker ps -a			//list of all containers
 
 docker stop $container_id	//stop container
 
