@@ -25,3 +25,9 @@ docker rm $container_id		//remove container
 docker tag docker/welcome-to-docker YOUR-USERNAME/welcome-to-docker	//rename docker image for publish to hub
 
 docker build -t node-docker-image-test --progress=plain --no-cache --target test .	// --progress=plain to view the build output, --no-cache to ensure the tests always run, --target test to target the test stage
+
+kubectl apply -f docker-node-kubernetes.yaml		//deploy application to Kubernetes
+kubectl get deployments					//listing deployments
+kubectl get services					//check for services
+kubectl delete -f docker-node-kubernetes.yaml		//tear down application
+
